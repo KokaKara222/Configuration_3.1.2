@@ -14,8 +14,10 @@ fun main(args: Array<String>) {
             "Неизвестный флаг: ${args.last()}"
         }
         val program = parseProgram(File(args[0]).readText())
+        File(args[1]).writeBytes(assemble(program))
+        println("Ассемблировано команд: ${program.size}")
         if (args.last() == "--test") {
-            program.forEach { println(formatFields(it)) }
+            program.forEach { println(formatBytes(encode(it))) }
         }
     } catch (error: Exception) {
         System.err.println("Ошибка: ${error.message}")
