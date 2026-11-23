@@ -1,0 +1,12 @@
+build/
+.gradle/
+.idea/
+.vscode/
+*.iml
+*.class
+*.jar
+*.bin
+*.zip
+*.tar
+*.gz
+.DS_Store
